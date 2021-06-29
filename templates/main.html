@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block title%}test page main{%endblock%}
+
+
+{%block flash_mess%}
+<div class='formma'>
+	{%with message=get_flashed_messages(with_categories=True)%}
+		{%if message%}
+			{%for category,i in message%}
+				{%if category == 'yes'%}
+				<h6></h6>
+				{%else%}
+					<h3> not allowed </h3>
+					<p> {{i}} </p>
+				{%endif%}
+			{%endfor%}
+
+
+		{%endif%}
+	{%endwith%}
+<form method='post'>
+	<label>type any</label><br>
+	<textarea rows='4' cols ='50' name='ANY'></textarea>
+	<button type='submit' class="btn">submit</button>
+</form>
+</div>
+{%for i in k%}
+{%if i =='-\n'%}<div class='topic'>  
+{%elif i == '--\n'%}</div>
+{%elif i == '--'%}</div>
+{%else%}
+<p>
+	{{i}}
+</p>
+{%endif%}
+{%endfor%}
+
+{%endblock%}
