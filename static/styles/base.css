@@ -40,6 +40,7 @@ ol:hover{
 	background-color:#462C2C;
 	color:white;
 	word-break: normal;
+	border:4px red solid;
 
 }
 
